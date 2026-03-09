@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKORY</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="trangchu.css">
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="index.html"><img src="image/logo.png" alt="BOOKORY"></a>
+            </div>
+            <div class="header__search">
+                <form action="" method="get" class="header__search-bar" >
+                    <input class="header__search-input" name="input_search" type="search" placeholder="Nhập vào tên một sản phẩm..." maxlength="200">
+                    <button class="header__search-button" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <nav class="header__menu">
+                <ul class="header__menu-items">
+                    <li class="header__aboutus"><a href="gioithieu/gioithieu.html"><p>Giới thiệu</p></a></li>
+                    <li class="header__shopping-bag">
+                        <a href="gio_hang/giohang.html">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                            <p>Giỏ hàng</p>
+                        </a>
+                    </li>
+                    <li class="header__user">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Tài khoản</p>
+                        <div class="header__login">
+                            <ul>
+                                <li>
+                                    <a href="dang_ky/dangky.html" class="header__button header__button-dangky">Đăng ký</a>
+                                </li>
+                                <li>
+                                    <a href="dang_nhap/dangnhap.html" class="header__button header__button-dangnhap">Đăng nhập</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="home-page">
+        <div class="home-banner__container">
+            <div class="home-banner__list">
+                <img src="image/banner/banner_1.png" alt="banner" class="home-banner">
+                <img src="image/banner/banner_2.png" alt="banner" class="home-banner">
+            </div>
+            <ul class="dots">
+                <li class="banner__dot-action"></li>
+                <li></li>
+            </ul>
+        </div>
+        <article class="home-main-article">
+            <section class="home-tool">
+                <div class="home-tool__element">
+                    <i class="fa-solid fa-truck"></i>
+                    <p>GIAO NHANH</p>
+                    <p>Cho tất cả đơn hàng</p>
+                </div>
+                <div class="home-tool__element">
+                    <i class="fa-solid fa-headphones"></i>
+                    <p>HỖ TRỢ 24/7</p>
+                    <p>Các ngày trong tuần</p>
+                </div>
+                <div class="home-tool__element">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <p>CHÍNH HÃNG</p>
+                    <p>Cam kết chất lượng</p>
+                </div>
+                <div class="home-tool__element">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <p>HOÀN TIỀN</p>
+                    <p>Nếu không hài lòng</p>
+                </div>
+            </section>
+            <section class="home-hot">
+                <h1>SÁCH BÁN CHẠY</h1>
+                <div class="home-hot-product">
+                    <button class="home-hot__button-left"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="hot-product__container">
+                        <div class="home-product-card hot__product-card">
+                            <a href="sanpham/tat_den.html">
+                                <img class="home-product-card__pic" src="sanpham/tat_den.jpg" alt="tat_den">
+                                <p class="home-product-card__name">Tiểu Thuyết Tắt Đèn - Ngô Tất Tố</p>
+                                <p class="home-product-card__current">40.000đ</p>
+                                <p class="home-product-card__old">50.000đ</p>
+                                <div class="home-product-card__tag">20%</div>
+                            </a>
+                        </div>
+                        <div class="home-product-card hot__product-card">
+                            <a href="sanpham/vo_nhat.html">
+                                <img class="home-product-card__pic" src="sanpham/vo_nhat.png" alt="vo_nhat">
+                                <p class="home-product-card__name">Tập Truyện Ngắn Vợ Nhặt - Kim Lân</p>
+                                <p class="home-product-card__current">48.000đ</p>
+                                <p class="home-product-card__old">60.000đ</p>
+                                <div class="home-product-card__tag">20%</div>
+                            </a>
+                        </div>
+                        <div class="home-product-card hot__product-card">
+                            <a href="">
+                                <img class="home-product-card__pic" src="sanpham/50_sac_thai_cua_tu.jpeg" alt="50_sac_thai_cua_tu">
+                                <p class="home-product-card__name">Nuance - 50 Sắc Thái Của Từ</p>
+                                <p class="home-product-card__current">127.000đ</p>
+                                <p class="home-product-card__old">159.000đ</p>
+                                <div class="home-product-card__tag">20%</div>
+                            </a>
+                        </div>
+                        <div class="home-product-card hot__product-card">
+                            <a href="">
+                                <img class="home-product-card__pic" src="sanpham/1000_phat_minh_va_kham_pha_vi_dai.jpg" alt="1000_phat_minh_va_kham_pha_vi_dai">
+                                <p class="home-product-card__name">1000 Phát Minh Và Khám Phá Vĩ Đại</p>
+                                <p class="home-product-card__current">449.000đ</p>
+                                <p class="home-product-card__old">499.000đ</p>
+                                <div class="home-product-card__tag">10%</div>
+                            </a>
+                        </div>
+                        <div class="home-product-card hot__product-card">
+                            <a href="">
+                                <img class="home-product-card__pic" src="sanpham/7_bai_hoc_hay_nhat_ve_vat_ly.jpeg" alt="7_bai_hoc_hay_nhat_ve_vat_ly">
+                                <p class="home-product-card__name">7 Bài Học Hay Nhất Về Vật Lý</p>
+                                <p class="home-product-card__current">79.000đ</p>
+                                <p class="home-product-card__old">99.000đ</p>
+                                <div class="home-product-card__tag">20%</div>
+                            </a>
+                        </div>
+                        <div class="home-product-card hot__product-card">
+                            <a href="">
+                                <img class="home-product-card__pic" src="sanpham/tranh_bien_sao_cho_dung.jpeg" alt="tranh_bien_sao_cho_dung">
+                                <p class="home-product-card__name">Tranh Biện Sao Cho Đúng</p>
+                                <p class="home-product-card__current">135.000đ</p>
+                                <p class="home-product-card__old">169.000đ</p>
+                                <div class="home-product-card__tag">20%</div>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="home-hot__button-right"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </section>
+            <section class="home-khampha" id="explore">
+                <h1>KHÁM PHÁ</h1>
+                <div class="home-product">
+                    <div class="home-product-card khampha__product-card">
+                        <a href="sanpham/tat_den.html">
+                            <img class="home-product-card__pic" src="sanpham/tat_den.jpg" alt="tat_den">
+                            <p class="home-product-card__name">Tiểu Thuyết Tắt Đèn - Ngô Tất Tố</p>
+                            <p class="home-product-card__current">40.000đ</p>
+                            <p class="home-product-card__old">50.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="sanpham/vo_nhat.html">
+                            <img class="home-product-card__pic" src="sanpham/vo_nhat.png" alt="vo_nhat">
+                            <p class="home-product-card__name">Tập Truyện Ngắn Vợ Nhặt - Kim Lân</p>
+                            <p class="home-product-card__current">48.000đ</p>
+                            <p class="home-product-card__old">60.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                        
+                            <img class="home-product-card__pic" src="sanpham/python_lap_trinh_thuat_toan.jpeg" alt="python_lap_trinh_thuat_toan">
+                            <p class="home-product-card__name">Python lập trình thuật toán - Bùi Việt Hà</p>
+                            <p class="home-product-card__current">67.000đ</p>
+                            <p class="home-product-card__old">95.000đ</p>
+                            <div class="home-product-card__tag">29%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/1000_phat_minh_va_kham_pha_vi_dai.jpg" alt="1000_phat_minh_va_kham_pha_vi_dai">
+                            <p class="home-product-card__name">1000 Phát Minh Và Khám Phá Vĩ Đại</p>
+                            <p class="home-product-card__current">449.000đ</p>
+                            <p class="home-product-card__old">499.000đ</p>
+                            <div class="home-product-card__tag">10%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/7_bai_hoc_hay_nhat_ve_vat_ly.jpeg" alt="7_bai_hoc_hay_nhat_ve_vat_ly">
+                            <p class="home-product-card__name">7 Bài Học Hay Nhất Về Vật Lý</p>
+                            <p class="home-product-card__current">79.000đ</p>
+                            <p class="home-product-card__old">99.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/1001_loi_tieng_anh_giao_tiep_va_cach_sua.png" alt="1001_loi_tieng_anh_giao_tiep_va_cach_sua">
+                            <p class="home-product-card__name">1001 Lỗi Tiếng Anh Giao Tiếp và Cách Sửa</p>
+                            <p class="home-product-card__current">135.000đ</p>
+                            <p class="home-product-card__old">169.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/50_sac_thai_cua_tu.jpeg" alt="50_sac_thai_cua_tu">
+                            <p class="home-product-card__name">Nuance - 50 Sắc Thái Của Từ</p>
+                            <p class="home-product-card__current">127.000đ</p>
+                            <p class="home-product-card__old">159.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/mat_biec.jpeg" alt="mat_biec">
+                            <p class="home-product-card__name">Mắt Biếc</p>
+                            <p class="home-product-card__current">88.000đ</p>
+                            <p class="home-product-card__old">110.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/doi_dap_tieng_anh_khong_can_nghi.jpeg" alt="doi_dap_tieng_anh_khong_can_nghi">
+                            <p class="home-product-card__name">Đối Đáp Tiếng Anh Không Cần Nghĩ</p>
+                            <p class="home-product-card__current">111.000đ</p>
+                            <p class="home-product-card__old">139.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/bo_con_ca_gai.jpeg" alt="bo_con_ca_gai">
+                            <p class="home-product-card__name">Bố Con Cá Gai</p>
+                            <p class="home-product-card__current">88.000đ</p>
+                            <p class="home-product-card__old">110.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/suc_manh_cua_viec_dat_cau_hoi_dung.jpeg" alt="suc_manh_cua_viec_dat_cau_hoi_dung">
+                            <p class="home-product-card__name">Sức Mạnh Của Việc Đặt Câu Hỏi Đúng</p>
+                            <p class="home-product-card__current">79.000đ</p>
+                            <p class="home-product-card__old">99.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/tranh_bien_sao_cho_dung.jpeg" alt="tranh_bien_sao_cho_dung">
+                            <p class="home-product-card__name">Tranh Biện Sao Cho Đúng</p>
+                            <p class="home-product-card__current">135.000đ</p>
+                            <p class="home-product-card__old">169.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                        
+                            <img class="home-product-card__pic" src="sanpham/phuong_phap_simon_cach_hoc_nhanh_nho_lau_moi_kien_thuc.webp" alt="phuong_phap_simon_cach_hoc_nhanh_nho_lau_moi_kien_thuc">
+                            <p class="home-product-card__name">Phương Pháp Simon - Cách Học Nhanh, Nhớ Lâu Mọi Kiến Thức</p>
+                            <p class="home-product-card__current">152.000đ</p>
+                            <p class="home-product-card__old">190.000đ</p>
+                            <div class="home-product-card__tag">29%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/sketchnote_ly_thuyet_phuong_phap_ghi_chu_sang_tao.jpg" alt="sketchnote_ly_thuyet_phuong_phap_ghi_chu_sang_tao">
+                            <p class="home-product-card__name">Sketchnote Lý Thuyết: Phương Pháp Ghi Chú Sáng Tạo</p>
+                            <p class="home-product-card__current">159.000đ</p>
+                            <p class="home-product-card__old">199.000đ</p>
+                            <div class="home-product-card__tag">10%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/1_ngay_bang_48_gio_so_tay_quan_ly_thoi_gian_hieu_qua.jpeg" alt="1_ngay_bang_48_gio_so_tay_quan_ly_thoi_gian_hieu_qua">
+                            <p class="home-product-card__name">1 Ngày Bằng 48 Giờ - Sổ Tay Quản Lý Thời Gian Hiệu Quả</p>
+                            <p class="home-product-card__current">57.000đ</p>
+                            <p class="home-product-card__old">72.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/suc_manh_cua_su_tu_te.jpeg" alt="Sức Mạnh Của Sự Tử Tế">
+                            <p class="home-product-card__name">Sức Mạnh Của Sự Tử Tế</p>
+                            <p class="home-product-card__current">62.000đ</p>
+                            <p class="home-product-card__old">78.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/nghe_nao_cho_ban_nghe_nao_cho_toi.png" alt="Nghề Nào Cho Bạn Nghề Nào Cho Tôi">
+                            <p class="home-product-card__name">Nghề Nào Cho Bạn Nghề Nào Cho Tôi</p>
+                            <p class="home-product-card__current">103.000đ</p>
+                            <p class="home-product-card__old">129.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/hoi_ky_nguoi_thay_xay_dung_truong_hanh_phuc.png" alt="Hồi Ký Người Thầy Xây Trường Hạnh Phúc">
+                            <p class="home-product-card__name">Hồi Ký Người Thầy Xây Trường Hạnh Phúc</p>
+                            <p class="home-product-card__current">111.000đ</p>
+                            <p class="home-product-card__old">139.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/tu_duy_nhanh_va_cham.jpeg" alt="Tư Duy Nhanh Và Chậm">
+                            <p class="home-product-card__name">Tư Duy Nhanh Và Chậm</p>
+                            <p class="home-product-card__current">215.000đ</p>
+                            <p class="home-product-card__old">269.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                    <div class="home-product-card khampha__product-card">
+                        <a href="">
+                            <img class="home-product-card__pic" src="sanpham/all_that_ielts.png" alt="All That IELTS">
+                            <p class="home-product-card__name">All That IELTS</p>
+                            <p class="home-product-card__current">223.000đ</p>
+                            <p class="home-product-card__old">279.000đ</p>
+                            <div class="home-product-card__tag">20%</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-more">
+                    <button class="home-more__button">XEM THÊM</button>
+                </div>
+            </section>
+            <section class="home-partner">
+                <h1>NHÀ XUẤT BẢN</h1>
+                <div class="home-partner__container">
+                    <button class="home-partner__button-left"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="partner__img">
+                        <img src="image/doi_tac/nxb_tre.png" alt="Nhà xuất bản Trẻ">
+                        <img src="image/doi_tac/nxb_van_hoc.jpg" alt="Nhà xuất bản Văn Học">
+                        <img src="image/doi_tac/nxb_kim_dong.webp" alt="Nhà xuất bản Kim Đồng">
+                        <img src="image/doi_tac/nxb_giao_duc_viet_nam.png" alt="Nhà xuất bản Giáo dục Việt Nam">
+                        <img src="image/doi_tac/nxb_hoi_nha_van.png" alt="Nhà xuất bản Hội Nhà Văn">
+                        <img src="image/doi_tac/nxb_ha_noi.png" alt="Nhà xuất bản Hà Nội">
+                        <img src="image/doi_tac/nxb_phu_nu_viet_nam.jpg" alt="Nhà xuất bản Phụ nữ Việt Nam">
+                        <img src="image/doi_tac/nxb_thanh_nien.png" alt="Nhà xuất bản Thanh Niên">
+                    </div>
+                    <button class="home-partner__button-right"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </section>
+        </article>
+        <button class="back-to-top" title="Lên đầu trang">
+            <i class="fa-solid fa-arrow-up-long"></i>
+        </button>
+    </main>
+    <footer>
+        <div class="footer__container">
+            <div class="footer__col">
+                <img src="image/logo.png" alt="logo">
+                <p>P. Ninh Kiều - Tp. Cần Thơ</p>
+                <div class="footer__social-media">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>ĐĂNG KÝ ĐỂ NHẬN TIN</h4>
+                <p>Nhận khuyến mãi nhanh nhất</p>
+                <form action="" class="footer__form" method="post">
+                    <input type="email" placeholder="Nhập email của bạn">
+                    <button type="submit">ĐĂNG KÝ</button>
+                </form>
+            </div>
+            <div class="footer__col">
+                <h4>HƯỚNG DẪN</h4>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="dang_nhap/dangnhap.html">Đăng nhập</a></li>
+                    <li><a href="dang_ky/dangky.html">Đăng ký</a></li>
+                    <li><a href="gio_hang/giohang.html">Giỏ hàng</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>LIÊN HỆ</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-phone"></i> 0123456789
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i> bookory@gmail.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i> P. Ninh Kiều - Tp. Cần Thơ
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

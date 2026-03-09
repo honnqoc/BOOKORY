@@ -4,14 +4,12 @@ let bannerItems = document.querySelectorAll(".home-banner");
 let dot = document.querySelectorAll(".dots li");
 let active = 0;
 let soBanner = bannerItems.length;
+
 // hiển thị banner
 function showBanner(index){
-
     active = index;
-
     // trượt banner
     bannerSlider.style.transform = `translateX(-${active * 100}%)`;
-
     // đổi dots
     dot.forEach(d => d.classList.remove("banner__dot-action"));
     dot[active].classList.add("banner__dot-action");
@@ -32,6 +30,7 @@ setInterval(() => {
     }
     showBanner(active);
 }, 6000);
+
 // MỤC SẢN PHẨM HOT
 let hotLeft = document.querySelector(".home-hot__button-left");
 let hotRight = document.querySelector(".home-hot__button-right");
@@ -126,6 +125,7 @@ function handleParnterSlide(param) {
     partnerSlider.style.transform = `translateX(${positionX}px)`;
 }
 //NÚT XEM THÊM SẢN PHẨM==============================================================
+
 let products = document.querySelectorAll(".khampha__product-card");
 let moreButton = document.querySelector(".home-more__button");
 let hienThi = 10; //chỉ hiển thị 10 sản phẩm đầu tiên
@@ -147,6 +147,7 @@ moreButton.addEventListener("click", function(){
 
 
 //NÚT BACK TO TOP QUAY LẠI ĐẦU TRANG==============================================
+
 let backToTop = document.querySelector(".back-to-top");
 //nếu scroll đến 400px hiện nút back to top
 window.addEventListener("scroll", function(){
