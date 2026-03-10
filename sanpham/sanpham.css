@@ -8,6 +8,7 @@
 body{
     background: linear-gradient(135deg,#f8fafc 0%,#eef4ff 40%,#e6f0ff 100%);
     font-size: 17px;
+    overflow-x: hidden;
 }
 
 a{
@@ -25,6 +26,7 @@ h1{
     color: #1e3c72;
     padding: 5px 12px 0;
     margin: 10px 50px 0;
+    text-align: center;
 }
 
 h2{
@@ -52,22 +54,14 @@ header{
 
 .header__container{
     width: 100%;
-    padding: 15px 5%;
+    padding: 12px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header__container{
-        padding: 12px 4%;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 .header__search{
     padding: 0;
-}
-
-.header__logo img{
-    height: 25px;
 }
 .header__search-input{
     padding: 4px 6px;
@@ -89,7 +83,7 @@ header{
 }
 
 .header__logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .header__logo img{
@@ -150,12 +144,12 @@ header{
 }
 
 .header__menu-items li i{
-    font-size: 10px;
+    font-size: 17px;
     display: none;
 }
 
 .header__menu-items li p{
-    font-size: 15px;
+    font-size: 17px;
     white-space: nowrap;
     font-weight: bold;
 }
@@ -171,11 +165,11 @@ header{
     position: relative;
 }
 
-.header__user, .header__shopping-bag, .header__aboutus {
+.header__user, .header__shopping-bag, .header__back-to-home {
     padding: 12px;
 }
 
-.header__user:hover, .header__shopping-bag:hover, .header__aboutus:hover {
+.header__user:hover, .header__shopping-bag:hover, .header__back-to-home:hover {
     border-radius: 10px;
     background: #ffd64f54;
     transition: 0.3s;
@@ -234,20 +228,20 @@ header{
 
 /* =============================== TRANG CHỦ ==================================== */
 /* =============================== BANNER ==================================== */
-.home-banner__container{
+.banner__container{
     width: 100%;
     position: relative;
     overflow: hidden;
     background: transparent;
 }
 
-.home-banner__list{
+.banner__list{
     display: flex;
     flex-wrap: nowrap;
     transition: transform 0.5s;
 }
 
-.home-banner{
+.banner{
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -256,7 +250,7 @@ header{
     flex-shrink: 0;
 }
 
-.dots{
+.banner__dots{
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -265,7 +259,7 @@ header{
     gap: 15px;
 }
 
-.dots li{
+.banner__dots li{
     width: 10px;
     height: 10px;
     background: white;
@@ -274,24 +268,24 @@ header{
     transition: 0.3s;
 }
 
-.dots li.banner__dot-action{
+.banner__dots li.banner__dot-action{
     width: 25px;
     border-radius: 10px;
 }
 
-.home-main-article{
+.main-article{
     padding: 12px 5%;
 }
 
 /* =============================== TOOL ==================================== */
 
-.home-tool{
+.tool{
     padding: 0 5% 12px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.home-tool__element{
+.tool__element{
     text-align: center;
     background-color: white;
     padding: 4px;
@@ -301,17 +295,17 @@ header{
     transition: 0.4s;
 }
 
-.home-tool__element i{
+.tool__element i{
     font-size: 25px;
     color: #1e3c72;
     font-weight: bold;
 }
 
-.home-tool__element p:first-of-type{
+.tool__element p:first-of-type{
     font-weight: bold;
 }
 
-.home-tool__element:hover{
+.tool__element:hover{
     transform:translateY(-4px);
     box-shadow:0 15px 20px rgba(0,0,0,0.2);
 }
@@ -319,34 +313,30 @@ header{
 
 /* =============================== KHÁM PHÁ ==================================== */
 
-section h1 {
-    text-align: center;
-}
-
-.home-hot, .home-khampha, .home-partner{
+.hot, .khampha, .partner{
     margin: 20px 0;
 }
 
-.home-hot{
+.hot{
     background: #e6f0ff;
     border-radius: 15px;
 }
 
-.home-product{
+.product{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-.home-hot-product{
+.hot-product{
     display: flex;
     position: relative;
     align-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-.home-hot-product .home-btn, .home-partner .home-btn {
+.hot-product .btn, .partner .btn {
     font-size: 17px;
     border: none;
     border-radius: 50%;
@@ -355,23 +345,28 @@ section h1 {
     transition: 0.2s;
 }
 
-.home-hot__button-right, .home-partner__button-right{
+.hot__button-right, .partner__button-right{
     position: absolute;
+    height: 35px;
+    width: 35px;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    text-align: center;
 }
 
-.home-hot__button-left, .home-partner__button-left{
+.hot__button-left, .partner__button-left{
     position: absolute;
+    height: 35px;
+    width: 35px;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
 }
 
-.home-hot-product button:hover, .home-partner button:hover{
+.hot-product button:hover, .partner button:hover{
     background-color: rgb(222, 222, 222);
     transform: translateY(-2px);
 }
@@ -384,7 +379,7 @@ section h1 {
     transition: transform 0.5s;
 }
 
-.home-product-card {
+.product-card {
     position: relative;
     background-color: white;
     padding: 18px;
@@ -397,7 +392,11 @@ section h1 {
     height: 100%;
 }
 
-.home-product-card a {
+.product-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.product-card a {
     display:flex;
     flex-direction:column;
     flex-grow:1;
@@ -408,7 +407,7 @@ section h1 {
     box-shadow: 0 20px 20px rgba(0,0,0,0.15);
 }
 
-.home-product-card__pic{
+.product-card__pic{
     width:100%;
     height:250px;
     object-fit:cover;
@@ -417,28 +416,28 @@ section h1 {
     transition: transform 0.3s;
 }
 
-.home-product-card:hover .home-product-card__pic {
+.product-card:hover .product-card__pic {
     transform: scale(1.07);
 }
 
-.home-product-card__name{
+.product-card__name{
     flex-grow: 1; 
     font-weight: 500;
     margin-top: 5px;
 }
 
-.home-product-card__current{
+.product-card__current{
     color: #d32f2f;
     font-weight: 700;
     font-size: 18px;
 }
 
-.home-product-card__old{
+.product-card__old{
     text-decoration: line-through #999;
     font-size: 14px;
 }
 
-.home-product-card__tag{
+.product-card__tag{
     position: absolute;
     background-color: #d32f2f;
     top: 0;
@@ -462,14 +461,14 @@ section h1 {
 
 /* =============================== MORE ==================================== */
 
-.home-more{
+.more{
     display: flex;
     justify-content: center;
     margin: 15px;
     transition: 0.4s;
 }
 
-.home-more__button{
+.more__button{
     padding: 10px;
     font-weight: bold;
     color: #1e3c72;
@@ -479,17 +478,17 @@ section h1 {
     border-radius: 15px;
 }
 
-.home-more:hover{
+.more:hover{
     transform: translateY(-6px);
 }
 
 /* =============================== PARTNER ==================================== */
 
-.home-partner{
+.partner{
     overflow-x: hidden;
 }
 
-.home-partner__container{
+.partner__container{
     display: flex;
     padding: 15px 0px;
     position: relative;
@@ -501,7 +500,7 @@ section h1 {
     gap: 20px;
 }
 
-.home-partner__container img{
+.partner__container img{
     height: 130px;
     width: 130px;
     object-fit: cover;
@@ -516,13 +515,14 @@ section h1 {
 
 .back-to-top{
     position: fixed;
+    height: 45px;
+    width: 45px;
     bottom: 60px;
     right: 25px;
     border: none;
     color: white;
     background-color: #1e3c72;
     border-radius: 50%;
-    padding: 8px;
     font-size: 18px;
     z-index: 1000;
     cursor: pointer;
@@ -543,13 +543,12 @@ section h1 {
     padding: 12px 5%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    font-size: 1rem;
+    gap: 25px;
 }
 
-.footer__container div{
+/* .footer__container div{
     padding: 10px 10px 10px 15px;
-}
+} */
 
 .footer__social-media {
     font-size: 25px;
@@ -558,13 +557,13 @@ section h1 {
 
 
 .footer__social-media a{
-    width:40px;
-    height:40px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    transition:0.3s;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
 }
 
 .footer__social-media a:hover{
@@ -667,49 +666,49 @@ section h1 {
         transform: translateX(-50%);
     }
 /* ========================TRANG CHỦ======================== */
-    .home-main-article{
+    .main-article{
         padding: 10px 4%;
     }
-    .home-tool{
+    .tool{
         padding: 0 4% 12px;
         grid-template-columns: repeat(2, 1fr);
     }
-    .home-tool__element i{
+    .tool__element i{
         font-size: 20px;
     }
-    .home-hot, .home-khampha, .home-partner{
+    .hot, .khampha, .partner{
         margin: 10px 0;
     }
-    .home-product{
+    .product{
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 12px;
     }
     .hot-product__container{
         gap: 12px;
     }
-    .home-product-card{
+    .product-card{
         padding: 15px;
     }
     .hot__product-card{
         min-width: 170px;
     }
-    .home-product-card__pic{
+    .product-card__pic{
         height: 180px;
     }
-    .home-product-card__current{
+    .product-card__current{
         font-size: 15px;
     }
-    .home-product-card__old{
+    .product-card__old{
         font-size: 12px;
     }
-    .home-product-card__tag{
+    .product-card__tag{
         font-size: 10px;
     }
-    .home-partner__container img{
+    .partner__container img{
         height: 80px;
         width: 80px;
     }
-    .home-more__button{
+    .more__button{
         font-size: 15px;
     }
 /* ================================FOOTER================================== */
@@ -731,7 +730,7 @@ section h1 {
     h2{
         font-size: 15px;
     }
-    .home-product{
+    .product{
         grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
         gap: 10px;
     }
