@@ -136,7 +136,7 @@ for(let i=hienThi; i < products.length; i++){
 moreButton.addEventListener("click", function(){
     let next = hienThi + 10; //cho phép hiển thị thêm 10 sản phẩm
     for(let i=hienThi; i<next && i<products.length; i++){
-        products[i].style.display = "block";
+        products[i].style.display = "flex";
     }
     hienThi = next;
     //nếu hết sản phẩm ẩn nút xem thêm

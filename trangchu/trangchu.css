@@ -94,22 +94,18 @@ nav a:hover {
     overflow: hidden;
 }
 
-.about-text {
-    float: left;
-    width: 20%;
-    padding-right: 3%;
-    opacity: 0; 
-    animation: slideInLeft 1.2s ease-out forwards;
-}
-
 .aboutus-title {
     display: flex;
-    justify-content:space-between;
 }
 
 .aboutus-title img {
     width: 10%; 
     margin: 0.2rem;
+}
+
+.aboutus-title .aboutus-text {
+    width: 40%;
+    padding-right: 0;
 }
 
 @keyframes slideInLeft {
@@ -123,54 +119,10 @@ nav a:hover {
     }
 }
 
-.about-text h2 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-}
-
-.about-text h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 0;
-    height: 4px;
-    background: linear-gradient(to right, #a4bbff, #5791ed);
-    border-radius: 2px;
-    transition: width 0.6s ease;
-}
-
-.about-text h2:hover::after {
-    width: 100%; 
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    color: #0b0909;
-    margin-bottom: 1rem;
-    animation: fadeIn 3s ease-out 2s forwards;
-}
-
-.about-text p:nth-child(2) {
-    animation-delay: 0.4s; 
-}
-
-.about-text p:nth-child(3) {
-    animation-delay: 0.8s; 
-}
-
-.about-text p:nth-child(4) {
-    animation-delay: 1.2s; 
-}
-
 quotes {
     animation: fadeIn 3s ease-out 2s forwards;
     animation-delay: 2.8s;
 }
-
 
 .about-image {
     margin-top: 45px;
