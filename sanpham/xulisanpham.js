@@ -13,20 +13,20 @@ dot.forEach((d, index) => {
 });
 
 // hiển thị banner
-function showBanner(index){
+function showBanner(index) {
     active = index;
     // trượt banner container sang trái một khoảng bằng index*100%
     bannerSlider.style.transform = `translateX(-${active * 100}%)`;
     // đổi dots
-        //xóa active của tất cả các dots
+    //xóa active của tất cả các dots
     dot.forEach(d => d.classList.remove("banner__dot-action"));
-        //thêm active cho dot đang hoạt động
+    //thêm active cho dot đang hoạt động
     dot[active].classList.add("banner__dot-action");
 }
 // auto chạy banner sau 6s
 setInterval(() => {
     active++;
-    if(active >= soBanner){
+    if (active >= soBanner) {
         active = 0;
     }
     showBanner(active);
@@ -42,11 +42,11 @@ const gap = 20;
 const hotSliderItemLength = hotSliderItems.length; //số lượng sản phẩm của mục hot
 
 // Click trái slider lùi 1
-hotLeft.addEventListener("click", function() {
+hotLeft.addEventListener("click", function () {
     hotSliderFunction(-1);
 });
 // Click phải slider tiến 1
-hotRight.addEventListener("click", function() {
+hotRight.addEventListener("click", function () {
     hotSliderFunction(1);
 });
 
@@ -78,7 +78,7 @@ function hotSliderFunction(x) {
     //di chuyển bằng cách thay đổi thuộc tính css
     hotSlider.style.transition = "transform 0.5s";
     hotSlider.style.transform = `translateX(${positionX}px)`;
-    
+
 }
 
 
@@ -92,11 +92,11 @@ const gapPartner = 20;
 const partnerSliderItemLength = partnerSliderItems.length;
 let partnerContainer = document.querySelector(".partner");
 // Click trái slider lùi 1
-partnerLeft.addEventListener("click", function() {
+partnerLeft.addEventListener("click", function () {
     partnerSliderFunction(-1);
 });
 //Click phải slider tiến 1
-partnerRight.addEventListener("click", function() {
+partnerRight.addEventListener("click", function () {
     partnerSliderFunction(1);
 });
 
@@ -132,18 +132,18 @@ function partnerSliderFunction(x) {
 let products = document.querySelectorAll(".khampha__product-card");
 let moreButton = document.querySelector(".more__button");
 let hienThi = 10; //chỉ hiển thị 10 sản phẩm đầu tiên
-for(let i=hienThi; i < products.length; i++){
+for (let i = hienThi; i < products.length; i++) {
     //ẩn các sản phẩm sau sản phẩm thứ 10
     products[i].style.display = "none";
 }
-moreButton.addEventListener("click", function(){
+moreButton.addEventListener("click", function () {
     let next = hienThi + 10; //cho phép hiển thị thêm 10 sản phẩm
-    for(let i=hienThi; i<next && i<products.length; i++){
+    for (let i = hienThi; i < next && i < products.length; i++) {
         products[i].style.display = "flex";
     }
     hienThi = next;
     //nếu hết sản phẩm ẩn nút xem thêm
-    if(hienThi >= products.length){
+    if (hienThi >= products.length) {
         moreButton.style.display = "none";
     }
 })
@@ -153,13 +153,13 @@ moreButton.addEventListener("click", function(){
 
 let backToTop = document.querySelector(".back-to-top");
 //nếu scroll đến 400px hiện nút back to top
-window.addEventListener("scroll", function(){
-    if(window.scrollY > 400)
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 400)
         backToTop.style.display = "block";
     else backToTop.style.display = "none";
 })
 //khi click vào nút back to top trở về đầu trang
-backToTop.addEventListener("click", function(){
+backToTop.addEventListener("click", function () {
     window.scrollTo({
         top: 0,
         behavior: "smooth"

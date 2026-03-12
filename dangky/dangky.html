@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body {
+            background: #f2f3f7;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            width: 400px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #4b4bb7;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #4b4bb7;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #37379b;
+        }
+
+        .text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .text a {
+            color: #4b4bb7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="form-box">
+
+        <h2>Đăng ký</h2>
+
+        <form>
+
+            <div class="input-group">
+                <label>Họ và tên *</label>
+                <input type="text" placeholder="Nhập họ và tên">
+            </div>
+
+            <div class="input-group">
+                <label>Email *</label>
+                <input type="email" placeholder="example@email.com">
+            </div>
+
+            <div class="input-group">
+                <label>Số điện thoại *</label>
+                <input type="text" placeholder="0xxxxxxxxx">
+            </div>
+
+            <div class="input-group">
+                <label>Địa chỉ *</label>
+                <input type="text" placeholder="Nhập địa chỉ">
+            </div>
+
+            <div class="input-group">
+                <label>Mật khẩu *</label>
+                <input type="password" placeholder="Tối thiểu 8 ký tự">
+            </div>
+
+            <div class="input-group">
+                <label>Xác nhận mật khẩu *</label>
+                <input type="password" placeholder="Nhập lại mật khẩu">
+            </div>
+
+            <div style="margin-top:10px;">
+                <input type="checkbox">
+                Tôi đồng ý với <a href="">điều khoản dịch vụ</a>.
+            </div>
+
+            <button class="btn">Đăng ký</button>
+
+            <p class="text">
+                Đã có tài khoản?
+                <a href="../dangnhap/dangnhap.html">Đăng nhập ngay</a>
+            </p>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
