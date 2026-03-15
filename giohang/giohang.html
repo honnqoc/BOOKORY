@@ -1,29 +1,62 @@
+</html>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="giohang.css">
-    <title>BOOKORY - Giỏ hàng</title>
+    <title>BOOKORY - Trang chủ</title>
 </head>
 
 <body>
-    <h1>Giỏ hàng của bạn:</h1>
-    <table class="cart-table">
-        <thead class="table-head">
-            <tr>
-                <th>Tên sách</th>
-                <th>Ảnh minh họa</th>
-                <th>Giá</th>
-                <th>Số lượng</th>
-                <th>Xóa sản phẩm</th>
-            </tr>
-        </thead>
-        <tbody class="table-body"></tbody>
-        <tfoot class="table-foot"></tfoot>
-    </table>
-    <script src="xuligiohang.js"></script>
+    <header>
+        <nav class="nav-container">
+            <img class="logo" src="../hinhanh/logo.png">
+            <ul>
+                <li><a href="../sanpham/sanpham.html">Sản phẩm</a></li>
+                <li><a href="../trangchu/trangchu.html">Trang chủ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="cart-main-container">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1>GIỎ HÀNG  <i class="fa-solid fa-shopping-cart"></i></h1>
+                <p class="quantity-in-cart">0</p>
+            </div>
+            <table class="cart-table">
+                <thead class="table-head">
+                    <tr>
+                        <th>Tên sách</th>
+                        <th>Ảnh minh họa</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Xóa sản phẩm</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body"></tbody>
+                <tfoot class="table-foot"></tfoot>
+            </table>
+        </div>
+        <form class="user-address-info">
+            <h2>THÔNG TIN ĐẶT HÀNG</h2>
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" name="address" required><br><br>
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <button id="order-btn" type="submit">Xác nhận đặt hàng</button>
+        </form>
+        <script src="xuligiohang.js"></script>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2026 BOOKORY. All rights reserved.</p>   
+    </footer>
 </body>
 
 </html>

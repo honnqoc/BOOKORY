@@ -41,15 +41,6 @@ let index = 0;
 const gap = 20;
 const hotSliderItemLength = hotSliderItems.length; //số lượng sản phẩm của mục hot
 
-// Click trái slider lùi 1
-hotLeft.addEventListener("click", function () {
-    hotSliderFunction(-1);
-});
-// Click phải slider tiến 1
-hotRight.addEventListener("click", function () {
-    hotSliderFunction(1);
-});
-
 function hotSliderFunction(x) {
     //chiều rộng của một thẻ
     const cardWidth = hotSliderItems[0].offsetWidth;
@@ -62,13 +53,13 @@ function hotSliderFunction(x) {
     //số index (lần di chuyển tối đa)= số card - số card hiển thị
     const maxIndex = hotSliderItemLength - visibleCards;
     //nếu x=1 trượt sang phải
-    if (x === 1) {
+    if (x == 1) {
         index++;
         //nếu hết sản phẩm quay về ban đầu
         if (index > maxIndex) index = 0;
     }
     //nếu x=-1 trượt sang trái
-    if (x === -1) {
+    if (x == -1) {
         index--;
         //nếu là sản phẩm đầu quay về sản phẩm cuối
         if (index < 0) index = maxIndex;
@@ -81,6 +72,15 @@ function hotSliderFunction(x) {
 
 }
 
+
+// Click trái slider lùi 1
+hotLeft.addEventListener("click", function () {
+    hotSliderFunction(-1);
+});
+// Click phải slider tiến 1
+hotRight.addEventListener("click", function () {
+    hotSliderFunction(1);
+});
 
 let partnerLeft = document.querySelector(".partner__button-left");
 let partnerRight = document.querySelector(".partner__button-right");
