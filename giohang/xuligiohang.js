@@ -48,13 +48,24 @@ const addToCart = (event) => {
 }
 
 // Thêm sự kiện click cho các button thêm vào giỏ
-const addToCartBtns = document.querySelectorAll('.add-to-cart');
-addToCartBtns.forEach((button, index) => {
-    button.addEventListener('click', (event) => {
+
+// const addToCartBtns = document.querySelectorAll('.add-to-cart');
+// addToCartBtns.forEach((button, index) => {
+//     button.addEventListener('click', (event) => {
+//         addToCart(event);
+//         alert('Sản phẩm đã được thêm vào giỏ hàng!');
+//     });
+// })
+
+/* Cách này sẽ tốt hơn vì sự kiện click của button sẽ được xử lí cả khi hiện ở trang tìm kiếm. Do JS
+xử lí sự kiện click chạy qua trước khi button được tạo ra trong DOM nên cách gán ở trên sẽ không bắt 
+được sự kiện click của button ở trang tìm kiếm. */
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('add-to-cart')) {
         addToCart(event);
         alert('Sản phẩm đã được thêm vào giỏ hàng!');
-    });
-})
+    }
+});
 
 // Hàm định dạng tiền tệ
 const formatCurrency = (amount, locale = "vi-VN") => {
@@ -77,7 +88,7 @@ const deleteProduct = (index) => {
 
 // Hàm hiển thị giỏ hàng
 const renderCart = () => {
-    if (localStorage.productCart == undefined) {
+    if (JSON.parse(localStorage.getItem('productCart')).length === 0) {
         // Hiển thị thông báo khi giỏ hàng trống
         const tbody = document.querySelector('tbody');
         tbody.innerHTML = '<tr><td colspan="5">Bạn chưa thêm sản phẩm nào vào giỏ hàng. Thêm sản phẩm bạn thích vào giỏ và quay lại nhé!</td></tr>';
