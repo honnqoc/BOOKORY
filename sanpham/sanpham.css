@@ -354,7 +354,10 @@ header {
     background-color: #ccc9c9;
     transition: 0.2s;
 }
-
+.hot-product .btn:hover,
+.partner .btn:hover {
+    transform: translateY(-2px);
+}
 .hot__button-right,
 .partner__button-right {
     position: absolute;
@@ -554,7 +557,7 @@ header {
 
 .footer__container {
     width: 100%;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #0255a7, #0e62f4);
     color: white;
     padding: 12px 5%;
     display: grid;
