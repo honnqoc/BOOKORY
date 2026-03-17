@@ -21,7 +21,7 @@ const addToCart = (event) => {
         let newProduct = {
             image: product.children[0].src,
             name: product.children[1].innerText,
-            price: product.children[2].innerText.replace('đ', ''),
+            price: product.children[2].innerText.replace(/[^\d]/g, ''),
             quantity: 1
         };
 
@@ -67,17 +67,6 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Hàm định dạng tiền tệ
-const formatCurrency = (amount, locale = "vi-VN") => {
-    // Sử dụng Intl.NumberFormat để định dạng số thành chuỗi tiền tệ
-    return new Intl.NumberFormat(locale, {
-        style: 'currency',
-        currency: 'VND',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2
-    }).format(amount);
-}
-
 // Hàm xóa sản phẩm khỏi giỏ hàng
 const deleteProduct = (index) => {
     let products = JSON.parse(localStorage.getItem('productCart'));
@@ -103,7 +92,7 @@ const renderCart = () => {
             <tr>
                 <td>${item.name}</td>
                 <td><img class="product-image" src="${item.image}" alt="${item.name}"></td>
-                <td>${item.price}đ</td>
+                <td>${Number(item.price.replace(/[^\d]/g, '')).toLocaleString()}đ</td>
                 <td>${item.quantity}</td>
                 <td><button class="delete-btn" type="button" onClick=deleteProduct(${index})>Xóa</button></td>
             </tr>`;
@@ -122,20 +111,20 @@ const renderCart = () => {
         const tfoot = document.querySelector('tfoot');
         let totalCost = 0;
         products.forEach(item => {
-            totalCost += Number(item.price.replace('.', ''))*Number(item.quantity);
+            totalCost += Number(item.price.replace(/[^\d]/g, ''))*Number(item.quantity);
         })
         tfoot.innerHTML = `
             <tr>
                 <td colspan="4">Tạm tính:</td>
-                <td>${formatCurrency(totalCost)}</td>
+                <td>${totalCost.toLocaleString()}đ</td>
             </tr>
             <tr>
                 <td colspan="4">VAT:</td>
-                <td>${formatCurrency(totalCost*0.1)}</td>
+                <td>${(totalCost*0.1).toLocaleString()}đ</td>
             </tr>
             <tr>
                 <td colspan="4">Thành tiền:</td>
-                <td>${formatCurrency(totalCost + totalCost*0.1)}</td>
+                <td>${(totalCost + totalCost*0.1).toLocaleString()}đ</td>
             </tr>
         `;
     }

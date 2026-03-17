@@ -1,16 +1,8 @@
-const searchInput = document.querySelector('[name="input-search"]');
-const searchButton = document.querySelector('[name="search-btn"]');
+const searchInput = document.querySelector('input[name="search"]');
+const searchBtn = document.querySelector('.header__search-button');
 
-const displaySearchResult = () => {
-    const bookName = searchInput.value.trim().toLowerCase();    
-
-    if (!bookName) {
-        alert("Vui lòng nhập tên sản phẩm bạn muốn tìm kiếm!");
-        return;
+searchBtn.addEventListener('click', () => {
+    if (searchInput.value === '') {
+        alert("Vui lòng nhập tên sản phẩm cần tìm!");
     }
-
-    const url = `timkiem.html?search=${encodeURIComponent(bookName)}`;
-    window.location.href = url;
-}
-
-searchButton.addEventListener("click", displaySearchResult);
+});

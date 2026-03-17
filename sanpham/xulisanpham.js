@@ -166,3 +166,15 @@ backToTop.addEventListener("click", function () {
     });
 })
 
+// Xử lí form điền email để nhận tin
+const registerBtn = document.querySelector('button[name="register-btn"]');
+const emailInput = document.querySelector('input[name="email-register"]');
+
+registerBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (emailInput.value === '') {
+        alert('Vui lòng nhập địa chỉ email của bạn trước!');
+    } else {
+        alert("Chúng tôi đã nhận được thông tin của bạn. Các chương trình khuyến mãi sẽ được gửi tới bạn ngay khi có!");
+    }
+})

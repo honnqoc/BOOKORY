@@ -19,7 +19,7 @@
             <div class="header__search">
                 <form action="../timkiem/timkiem.html" method="get" class="header__search-bar">
                     <input class="header__search-input" type="search" name="search"
-                        placeholder="Nhập vào tên một sản phẩm..." maxlength="200">
+                        placeholder="Nhập vào tên một sản phẩm..." maxlength="200" required>
                     <button class="header__search-button" type="submit">
                         <i class="fa-solid fa-search"></i>
                     </button>
@@ -442,8 +442,8 @@
                 <h4>ĐĂNG KÝ ĐỂ NHẬN TIN</h4>
                 <p>Nhận khuyến mãi nhanh nhất</p>
                 <form action="" class="footer__form" method="post">
-                    <input type="email" placeholder="Nhập email của bạn">
-                    <button type="submit">ĐĂNG KÝ</button>
+                    <input type="email" placeholder="Nhập email của bạn" name="email-register" required>
+                    <button type="submit" name="register-btn">ĐĂNG KÝ</button>
                 </form>
             </div>
             <div class="footer__col">
@@ -473,6 +473,7 @@
     </footer>
     <script src="xulisanpham.js"></script>
     <script src="../giohang/xuligiohang.js"></script>
+    <script src="timkiem.js"></script>
 </body>
 
 </html>
