@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.nav-container {
+.header-container {
     width: 100%;
     height: 12%;
     position: fixed;
@@ -13,12 +13,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(120deg, #3e85e3, #1575f2);
+    background: linear-gradient(135deg, #0255a7, #0e62f4);
     z-index: 1000;
-    transition: all 3s ease;
+    transition: transform 3s ease;
 }
 
-.nav-container .logo:hover {
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.header-container .logo:hover {
     transform: scale(1.05);
 }
 

@@ -8,10 +8,17 @@ const checkLogin = () => {
     const storedEmail = localStorage.getItem('email');
     const storedPassword = localStorage.getItem('password');
 
+    // Kiểm tra dữ liệu đã nhâp đủ hay chưa
+    if (!email.trim() || !password.trim()) {
+        alert("Vui lòng nhập đầy đủ thông tin.");
+        return false;
+    }
+
     // Kiểm tra thông tin đăng nhập có khớp với thông tin đã lưu hay không
     if (email === storedEmail && password === storedPassword) {
         return true;
     } else {
+        alert("Đăng nhập thất bại. Vui lòng kiểm tra lại email và mật khẩu.");
         return false;
     }
 };
@@ -25,7 +32,5 @@ loginBtn.addEventListener('click', (event) => {
     if (checkLogin()) {
         alert("Đăng nhập thành công, cùng nhau khám phá thế giới sách tại BOOKORY nào!");
         location.href = "../sanpham/sanpham.html";
-    } else {
-        alert("Đăng nhập thất bại. Vui lòng kiểm tra lại email và mật khẩu.");
     }
 })

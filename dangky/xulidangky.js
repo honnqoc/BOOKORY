@@ -10,18 +10,8 @@ const checkValidation = () => {
 
     // Kiểm tra các trường input có hợp lệ hay không
 
-    if (!nameInput.value.trim()) {
-        alert("Vui lòng nhập họ và tên.");
-        return false;
-    }
-
-    if (!emailInput.value.trim()) {
-        alert("Vui lòng nhập email.");
-        return false;
-    }
-
-    if (!passwordInput.value.trim()) {
-        alert("Vui lòng nhập mật khẩu.");
+    if (!nameInput.value.trim() || !emailInput.value.trim() || !passwordInput.value.trim() || !confirmPasswordInput.value.trim()) {
+        alert("Vui lòng nhập đầy đủ thông tin.");
         return false;
     }
 

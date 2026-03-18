@@ -81,12 +81,12 @@ header {
 /* =============================== LOGO ==================================== */
 
 .header__logo {
-    flex: 1;
-    transition: transform 0.3s ease, color 0.3s ease;
+    /* flex: 1; */
+    transition: all 0.3s ease;
 }
 
 .header__logo:hover {
-    transform: scale(1.02);
+    transform: scale(1.07);
 }
 
 .header__logo img {
@@ -96,10 +96,11 @@ header {
 /* =============================== SEARCH BAR ==================================== */
 
 .header__search {
-    flex: 1;
     display: flex;
     justify-content: center;
     padding: 0px 10px;
+    width: 40%;
+    margin-left: 14%;
 }
 
 .header__search-bar {

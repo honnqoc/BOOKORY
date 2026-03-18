@@ -1,12 +1,7 @@
 // Hàm kiểm tra sản phẩm đã có trong giỏ hàng hay chưa
-const checkProductExists = (productName, products) => {
-    let exists = false;
-    products.forEach(item => {
-        if (item.name === productName) {
-            exists = true;
-        }
-    })
-    return exists;
+const checkProductExists = (productID, products) => {
+    // Kiểm tra nếu có sản phẩm nào trong mảng products có id trùng với productID
+    return products.some(item => item.id === productID);
 }
 
 // Hàm thêm sản phẩm
@@ -14,23 +9,24 @@ const addToCart = (event) => {
 
     // Kiểm tra nếu trình duyệt hỗ trợ localStorage
     if (typeof Storage != "undefined") {
-        // 
+        // Lấy thông tin sản phẩm từ DOM
         const button = event.target;
         const product = button.previousElementSibling;
-        // 
+        // Tạo một đối tượng sản phẩm mới với thông tin lấy được
         let newProduct = {
             image: product.children[0].src,
-            name: product.children[1].innerText,
-            price: product.children[2].innerText.replace(/[^\d]/g, ''),
+            id: product.children[1].innerText,
+            name: product.children[2].innerText,
+            price: product.children[3].innerText.replace(/[^\d]/g, ''),
             quantity: 1
         };
 
         // Lấy dữ liệu giỏ hàng từ localStorage, nếu chưa có thì tạo mới một mảng rỗng
         let products = JSON.parse(localStorage.getItem('productCart')) || [];
-        if (checkProductExists(newProduct.name, products) == true) {
+        if (checkProductExists(newProduct.id, products)) {
             // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng lên 1
             products.forEach(item => {
-                if (item.name === newProduct.name) {
+                if (item.id === newProduct.id) {
                     item.quantity++;
                 }
             })
@@ -70,23 +66,35 @@ document.addEventListener('click', (event) => {
 // Hàm xóa sản phẩm khỏi giỏ hàng
 const deleteProduct = (index) => {
     let products = JSON.parse(localStorage.getItem('productCart'));
+    // Xóa sản phẩm tại vị trí index trong mảng products
     products.splice(index, 1);
     localStorage.setItem('productCart', JSON.stringify(products));
-    window.location.reload();
+    // Gọi hàm renderCart để cập nhật lại giao diện giỏ hàng sau khi xóa sản phẩm 
+    renderCart();
 }
 
 // Hàm hiển thị giỏ hàng
 const renderCart = () => {
-    if (JSON.parse(localStorage.getItem('productCart')).length === 0) {
-        // Hiển thị thông báo khi giỏ hàng trống
+    // Lấy dữ liệu giỏ hàng từ localStorage
+    let products = JSON.parse(localStorage.getItem('productCart'));
+    // Nếu giỏ hàng trống (không có sản phẩm nào hoặc mảng products là null) 
+    if (JSON.parse(localStorage.getItem('productCart')) == null || products.length == 0) {
+        // Xóa nội dung của phần tfoot để không hiển thị tổng tiền khi giỏ hàng trống
+        const tfoot = document.querySelector('tfoot');
+        tfoot.innerHTML = '';
+        // Cập nhật số lượng sản phẩm trong giỏ hàng ở cart-header về 0
+        const quantityInCart = document.querySelector('.quantity-in-cart');
+        quantityInCart.innerText = 0;
+        // // Hiển thị thông báo khi giỏ hàng trống
         const tbody = document.querySelector('tbody');
         tbody.innerHTML = '<tr><td colspan="5">Bạn chưa thêm sản phẩm nào vào giỏ hàng. Thêm sản phẩm bạn thích vào giỏ và quay lại nhé!</td></tr>';
-    } else {
-        // Lấy dữ liệu giỏ hàng từ localStorage
-        const products = JSON.parse(localStorage.getItem('productCart'));
 
+    } else {
         // Hiển thị sản phẩm trong giỏ hàng
         const tbody = document.querySelector('tbody');
+        // Tạo một chuỗi HTML để chứa các hàng sản phẩm trong giỏ hàng
+        let html = '';
+        // Duyệt qua mảng products và tạo một hàng HTML cho mỗi sản phẩm, sau đó thêm vào chuỗi html
         products.forEach((item, index) => {
             let newRow = `
             <tr>
@@ -94,10 +102,14 @@ const renderCart = () => {
                 <td><img class="product-image" src="${item.image}" alt="${item.name}"></td>
                 <td>${Number(item.price.replace(/[^\d]/g, '')).toLocaleString()}đ</td>
                 <td>${item.quantity}</td>
-                <td><button class="delete-btn" type="button" onClick=deleteProduct(${index})>Xóa</button></td>
+                <!-- Dùng data-index để lưu vị trí index của sản phẩm trong mảng products -->
+                <td><button class="delete-btn" type="button" data-index="${index}">Xóa</button></td>
             </tr>`;
-            tbody.innerHTML += newRow;
+            html += newRow;
         })
+
+        // Cập nhật nội dung của tbody với các sản phẩm trong giỏ hàng
+        tbody.innerHTML = html;
 
         // Cập nhật số lượng sản phẩm trong giỏ hàng ở header
         const quantityInCart = document.querySelector('.quantity-in-cart');
@@ -131,14 +143,43 @@ const renderCart = () => {
 }
 renderCart();
 
+// Lắng nghe sự kiện click cho button xóa sản phẩm
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-btn')) {
+        // Tìm vị trí index của button xóa được click trong danh sách các button xóa
+        const index = event.target.getAttribute('data-index');
+        deleteProduct(index);
+    }
+});
+
+// Hàm kiểm tra form đặt hàng đã được điền đầy đủ thông tin hay chưa
+const checkOrderForm = () => {
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    const addressInput = document.getElementById('address');
+    if (nameInput.value.trim() === '' || phoneInput.value.trim() === '' || addressInput.value.trim() === '') {
+        alert('Vui lòng điền đầy đủ thông tin để đặt hàng!');
+        return false;
+    }
+    return true;
+}
 // Lắng nghe sự kiện click cho button đặt hàng
 const orderBtn = document.getElementById('order-btn');
 orderBtn.addEventListener('click', (event) => {
     event.preventDefault();
+    // Kiểm tra nếu form đặt hàng chưa được điền đầy đủ thông tin thì không thực hiện đặt hàng
+    if (!checkOrderForm()) {
+        return;
+    }
+    // Kiểm tra nếu giỏ hàng trống thì không thực hiện đặt hàng
+    let products = JSON.parse(localStorage.getItem('productCart'));
+    if (localStorage.getItem('productCart') === null || products.length == 0) {
+        alert('Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm vào giỏ hàng trước khi đặt hàng!');
+        return;
+    }
+    // Nếu form đặt hàng đã được điền đầy đủ thông tin và giỏ hàng không trống thì thực hiện đặt hàng
     alert('Cảm ơn bạn đã đặt hàng! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.');
     localStorage.removeItem('productCart');
     window.location.href = '../trangchu/trangchu.html';
 });
-
-
 
