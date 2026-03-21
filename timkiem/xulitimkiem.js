@@ -199,7 +199,7 @@ if (results.length === 0) {
         productCard.classList.add("khampha_product-card");
         // Điền thông tin sản phẩm vào thẻ
         productCard.innerHTML = `
-            <a href="../chitietsanpham.html/chitietsanpham.html?id=${product.id}">
+            <a href="../chitietsanpham/chitietsanpham.html?id=${product.id}">
                 <img class="product-card__pic" src="${product.image}" alt="${product.name}">
                 <p class="product-card__id" hidden>${product.id}</p>
                 <p class="product-card__name">${product.name}</p>
