@@ -191,12 +191,14 @@ const id = detailParams.get('id');
 const product = products.find(item => item.id == id);
 
 if (product) {
+    // Cập nhật thông tin sản phẩm trên trang chi tiết
     document.querySelector('.product-card__id').textContent = product.id;
     document.querySelector('.product-card__pic').src = product.img;
     document.querySelector('.product-card__name').textContent = product.name;
     document.querySelector('.product-card__current').textContent = product.price.toLocaleString() + "đ";
     document.querySelector('.product-card__old').textContent = product.oldPrice.toLocaleString() + "đ";
 
+    // Cập nhật phần mô tả chi tiết
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('product-old-price').textContent = product.oldPrice.toLocaleString() + "đ";
     document.getElementById('product-price').textContent = product.price.toLocaleString() + "đ";
@@ -208,6 +210,7 @@ if (product) {
 const registerBtn = document.querySelector('button[name="register-btn"]');
 const emailInput = document.querySelector('input[name="email-register"]');
 
+// Kiểm tra nếu email trống thì yêu cầu nhập, nếu có thì thông báo đã nhận được thông tin
 registerBtn.addEventListener('click', (event) => {
     event.preventDefault();
     if (emailInput.value === '') {

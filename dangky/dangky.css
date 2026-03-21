@@ -1,9 +1,11 @@
+/* Reset CSS */
 * {
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
 }
 
+/* Header */
 .header-container {
     width: 100%;
     height: 12%;
@@ -54,6 +56,7 @@ nav ul li a:hover {
    color: black;
 }
 
+/* Body */
 body {
     margin-top: 8%;
     text-align: center;
@@ -62,6 +65,7 @@ body {
     background-attachment: fixed;
 }
 
+/* Form đăng ký */
 form {
     width: 50%;
     display: flex;
@@ -91,6 +95,7 @@ form input {
     width: 100%;
 }
 
+/* Nút gửi form */
 form button {
     background-color: #1559d8;
     color: black;
@@ -139,6 +144,7 @@ form button:hover {
     text-decoration: none;
 }
 
+/* Footer */
 footer {
     background-color: #002b7a;
     color: white;

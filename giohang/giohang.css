@@ -1,9 +1,11 @@
+/* Reset CSS */
 * {
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
 }
 
+/* Header */
 .header-container {
     width: 100%;
     height: 12%;
@@ -54,6 +56,7 @@ nav ul li a:hover {
    color: black;
 }
 
+/* Body */
 body {
     margin-top: 8%;
     text-align: center;
@@ -62,6 +65,7 @@ body {
     background-attachment: fixed;
 }
 
+/* Bảng giỏ hàng */
 table, td, th {
     border: 1px solid black;
     border-collapse: collapse;
@@ -120,6 +124,7 @@ td, th {
     padding: 0.5rem;
 }
 
+/* Form đặt hàng */
 form {
     width: 70%;
     display: flex;
@@ -164,16 +169,7 @@ form button:hover {
     transform: scale(1.05);
 }
 
-footer {
-    background-color: #002b7a;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
+/* Nút xóa sản phẩm */
 .delete-btn {
     background-color: #1342ffba;
     color: white;
@@ -187,3 +183,15 @@ footer {
 .delete-btn:hover {
     background-color: #ff0000;
 }
+
+/* Footer */
+footer {
+    background-color: #002b7a;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+

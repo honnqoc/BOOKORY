@@ -1,3 +1,4 @@
+ /* Reset CSS */
  * {
      margin: 0;
      padding: 0;
@@ -9,6 +10,7 @@
      line-height: 1.6;
  }
 
+ /* Header */
  header {
      position: fixed;
      width: 100%;
@@ -91,6 +93,8 @@
      transform: translateY(-2px);
  }
 
+ /* Giới thiệu */
+
  .aboutus-section {
      padding: 2rem;
      background: linear-gradient(135deg, #52a9ff, #87aae7) transparent;
@@ -107,130 +111,6 @@
 
  .text-2nd {
     margin-left: 10%;
- }
-
- @keyframes slideInLeft {
-     from {
-         opacity: 0;
-         transform: translateX(-60px);
-     }
-
-     to {
-         opacity: 1;
-         transform: translateX(0);
-     }
- }
-
- @keyframes slideInRight {
-     from {
-         opacity: 0;
-         transform: translateX(60px);
-     }
-
-     to {
-         opacity: 1;
-         transform: translateX(0);
-     }
- }
-
- /* Footer */
- footer {
-     background: rgb(246, 243, 243);
-     color: white;
-     padding: 3rem 0 1rem;
- }
-
- .footer-container {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 0 2rem;
-     overflow: hidden;
-     display: flex;
-     align-items: center;
-     flex-direction: column;
- }
-
- .footer-content {
-     display: grid;
-     grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
-     gap: 2rem;
-     margin-bottom: 2rem;
- }
-
- .footer-section h3 {
-     font-size: 1.3rem;
-     margin-bottom: 1.2rem;
-     color: #080706;
-     font-weight: 600;
-     font-weight: bold;
- }
-
- .footer-section p {
-     color: #070505;
-     margin-bottom: 0.8rem;
-     line-height: 1.6;
- }
-
- .footer-section a {
-     color: #070505;
-     text-decoration: none;
-     display: block;
-     margin-bottom: 0.6rem;
-     transition: color 0.3s ease;
- }
-
- .footer-section a:hover {
-     color: #0a01c0;
-     padding-left: 5px;
- }
-
- .social-links {
-     display: flex;
-     gap: 1rem;
-     margin-top: 1rem;
- }
-
- .social-links a {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 35px;
-     height: 35px;
-     background: rgba(21, 95, 185, 0.2);
-     border: 2px solid #0906c9;
-     border-radius: 8px;
-     color: #1c6393;
-     font-size: 1.1rem;
-     transition: all 0.3s ease;
- }
-
- .social-links a:nth-child(3) {
-     border: 2px solid rgb(194, 71, 91);
-     background-color: pink;
-     color: rgb(228, 114, 133);
- }
-
- .social-links a:hover {
-     background: #04307d;
-     color: white;
-     transform: translateY(-3px);
-     box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
- }
-
- .social-links a:nth-child(3):hover {
-     background: #ff6bae;
-     color: white;
-     transform: translateY(-3px);
-     box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
- }
-
- .footer-bottom {
-     text-align: center;
-     padding-top: 2rem;
-     border-top: 1px solid #555;
-     color: #aaa;
-     font-size: 0.9rem;
-     width: 100%;
  }
 
  .aboutus-title {
@@ -435,6 +315,131 @@
      animation: pulse 2.5s infinite;
  }
 
+ /* Footer */
+ footer {
+     background: rgb(246, 243, 243);
+     color: white;
+     padding: 3rem 0 1rem;
+ }
+
+ .footer-container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 2rem;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+ }
+
+ .footer-content {
+     display: grid;
+     grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+     gap: 2rem;
+     margin-bottom: 2rem;
+ }
+
+ .footer-section h3 {
+     font-size: 1.3rem;
+     margin-bottom: 1.2rem;
+     color: #080706;
+     font-weight: 600;
+     font-weight: bold;
+ }
+
+ .footer-section p {
+     color: #070505;
+     margin-bottom: 0.8rem;
+     line-height: 1.6;
+ }
+
+ .footer-section a {
+     color: #070505;
+     text-decoration: none;
+     display: block;
+     margin-bottom: 0.6rem;
+     transition: color 0.3s ease;
+ }
+
+ .footer-section a:hover {
+     color: #0a01c0;
+     padding-left: 5px;
+ }
+
+ .social-links {
+     display: flex;
+     gap: 1rem;
+     margin-top: 1rem;
+ }
+
+ .social-links a {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 35px;
+     height: 35px;
+     background: rgba(21, 95, 185, 0.2);
+     border: 2px solid #0906c9;
+     border-radius: 8px;
+     color: #1c6393;
+     font-size: 1.1rem;
+     transition: all 0.3s ease;
+ }
+
+ .social-links a:nth-child(3) {
+     border: 2px solid rgb(194, 71, 91);
+     background-color: pink;
+     color: rgb(228, 114, 133);
+ }
+
+ .social-links a:hover {
+     background: #04307d;
+     color: white;
+     transform: translateY(-3px);
+     box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+ }
+
+ .social-links a:nth-child(3):hover {
+     background: #ff6bae;
+     color: white;
+     transform: translateY(-3px);
+     box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+ }
+
+ .footer-bottom {
+     text-align: center;
+     padding-top: 2rem;
+     border-top: 1px solid #555;
+     color: #aaa;
+     font-size: 0.9rem;
+     width: 100%;
+ }
+
+ /* Animations */
+ @keyframes slideInLeft {
+     from {
+         opacity: 0;
+         transform: translateX(-60px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ @keyframes slideInRight {
+     from {
+         opacity: 0;
+         transform: translateX(60px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
  @keyframes pulse {
      0% {
          transform: scale(1);
@@ -449,6 +454,7 @@
      }
  }
 
+ /* Responsive */
  @media (max-width: 1024px) {
      .aboutus-title {
          height: auto;
