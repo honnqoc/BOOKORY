@@ -199,7 +199,7 @@ if (results.length === 0) {
         productCard.classList.add("khampha_product-card");
         // Điền thông tin sản phẩm vào thẻ
         productCard.innerHTML = `
-            <a href="">
+            <a href="../chitietsanpham.html/chitietsanpham.html?id=${product.id}">
                 <img class="product-card__pic" src="${product.image}" alt="${product.name}">
                 <p class="product-card__id" hidden>${product.id}</p>
                 <p class="product-card__name">${product.name}</p>
@@ -213,3 +213,16 @@ if (results.length === 0) {
         productContainer.appendChild(productCard);
     });
 }
+
+// Xử lí form điền email để nhận tin
+const registerBtn = document.querySelector('button[name="register-btn"]');
+const emailInput = document.querySelector('input[name="email-register"]');
+
+registerBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (emailInput.value === '') {
+        alert('Vui lòng nhập địa chỉ email của bạn trước!');
+    } else {
+        alert("Chúng tôi đã nhận được thông tin của bạn. Các chương trình khuyến mãi sẽ được gửi tới bạn ngay khi có!");
+    }
+})
