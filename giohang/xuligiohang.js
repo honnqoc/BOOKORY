@@ -146,9 +146,17 @@ renderCart();
 // Lắng nghe sự kiện click cho button xóa sản phẩm
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('delete-btn')) {
-        // Tìm vị trí index của button xóa được click trong danh sách các button xóa
-        const index = event.target.getAttribute('data-index');
-        deleteProduct(index);
+        // Hiển thị hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng
+        let accept = confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');
+        // Nếu người dùng xác nhận xóa sản phẩm thì gọi hàm xóa sản phẩm khỏi giỏ hàng
+        if (accept) {
+            // Tìm vị trí index của button xóa được click trong danh sách các button xóa
+            const index = event.target.getAttribute('data-index');
+            deleteProduct(index);
+        } else {
+            // Nếu người dùng không xác nhận xóa sản phẩm thì không thực hiện hành động nào và ngăn chặn sự kiện click mặc định của button xóa
+            event.preventDefault();
+        }
     }
 });
 
@@ -182,4 +190,6 @@ orderBtn.addEventListener('click', (event) => {
     localStorage.removeItem('productCart');
     window.location.href = '../trangchu/trangchu.html';
 });
+
+
 
