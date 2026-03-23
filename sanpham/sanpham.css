@@ -1,3 +1,4 @@
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -234,8 +235,8 @@ header {
     background: #f2f2f2;
 }
 
-/* =============================== TRANG CHỦ ==================================== */
 /* =============================== BANNER ==================================== */
+
 .banner__container {
     width: 100%;
     position: relative;
@@ -650,7 +651,7 @@ header {
     margin-top: 2px;
 }
 
-
+/* Responsive */
 @media screen and (max-width: 600px) {
     body {
         font-size: 14px;
@@ -694,8 +695,7 @@ header {
         left: 25%;
         transform: translateX(-50%);
     }
-
-    /* ========================TRANG CHỦ======================== */
+    
     .main-article {
         padding: 10px 4%;
     }
