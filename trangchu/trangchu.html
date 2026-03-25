@@ -18,29 +18,69 @@
 
 <body>
     <header>
-        <nav class="nav-container">
-            <img class="logo" src="../hinhanh/logo.png">
-            <ul>
-                <li>
-                    <a href="../sanpham/sanpham.html">
-                        <i class="fa-solid fa-book"></i>
-                        <p>Sản phẩm</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="../dangky/dangky.html">
-                        <i class="fa-solid fa-user-plus"></i>
-                        <p>Đăng ký</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="../dangnhap/dangnhap.html">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <p>Đăng nhập</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="../trangchu/trangchu.html"><img src="../hinhanh/logo.png" alt="BOOKORY"></a>
+            </div>
+            <div class="header__search">
+                <form action="../timkiem/timkiem.html" method="get" class="header__search-bar">
+                    <input class="header__search-input" type="search" name="search"
+                        placeholder="Nhập vào tên một sản phẩm..." maxlength="200" required>
+                    <button class="header__search-button" type="submit">
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <nav class="header__menu">
+                <ul class="header__menu-items">
+                    <li class="header__back-to-home">
+                        <a href="../trangchu/trangchu.html">
+                            <i class="fa-solid fa-home"></i>
+                            <p>Trang chủ</p>
+                        </a>
+                    </li>
+                    <li class="header__sanpham">
+                        <a href="../sanpham/sanpham.html">
+                            <i class="fa-solid fa-book"></i>
+                            <p>Sản phẩm</p>
+                        </a>
+                    </li>
+                    <li class="header__shopping-bag">
+                        <a href="../giohang/giohang.html">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                            <p>Giỏ hàng</p>
+                        </a>
+                    </li>
+                    <li class="header__user">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Tài khoản</p>
+                        <div class="header__login">
+                            <ul>
+                                <li class="header__dangky">
+                                    <a href="../dangky/dangky.html" 
+                                    class="header__button header__button-dangky">Đăng ký</a>
+                                </li>
+                                <li class="header__dangnhap">
+                                    <a href="../dangnhap/dangnhap.html"
+                                        class="header__button header__button-dangnhap">Đăng nhập</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="hamburger__dangky">
+                        <a href="../dangky/dangky.html">Đăng ký</a>
+                    </li>
+                    <li class="hamburger__dangnhap">
+                        <a href="../dangnhap/dangnhap.html">Đăng nhập</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-x"></i>
+            </div>
+        </div>
     </header>
 
     <main class="aboutus-container">
@@ -120,41 +160,54 @@
         </section>
     </main>
     <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Bookory</h3>
-                    <p>Mang những trang sách đến với cộng đồng</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Liên Kết</h3>
-                    <a href="../trangchu/trangchu.html">Trang chủ</a>
-                    <a href="../sanpham/sanpham.html">Sản phẩm</a>
-                    <li><a href="../dangky/dangky.html">Đăng ký</a></li>
-                    <li><a href="../dangnhap/dangnhap.html">Đăng nhập</a></li>
-                </div>
-                <div class="footer-section">
-                    <h3>Giờ Mở Cửa</h3>
-                    <p>Thứ 2 - Thứ 6: 7:00 - 21:00</p>
-                    <p>Thứ 7 - Chủ nhật: 8:00 - 22:00</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Liên Hệ</h3>
-                    <p>Địa chỉ: Q. Ninh Kiều, Tp. Cần Thơ</p>
-                    <p>Số điện thoại: 0123456789</p>
-                    <p>Email: bookory@gmail.com</p>
+        <div class="footer__container">
+            <div class="footer__col">
+                <img src="../hinhanh/logo.png" alt="logo">
+                <p>P. Ninh Kiều - Tp. Cần Thơ</p>
+                <div class="footer__social-media">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 BOOKORY. All rights reserved.</p>
+            <div class="footer__col">
+                <h4>ĐĂNG KÝ ĐỂ NHẬN TIN</h4>
+                <p>Nhận khuyến mãi nhanh nhất</p>
+                <form action="" class="footer__form" method="post">
+                    <input type="email" placeholder="Nhập email của bạn" name="email-register" required>
+                    <button type="submit" name="register-btn">ĐĂNG KÝ</button>
+                </form>
+            </div>
+            <div class="footer__col">
+                <h4>HƯỚNG DẪN</h4>
+                <ul>
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="">Đăng nhập</a></li>
+                    <li><a href="">Đăng ký</a></li>
+                    <li><a href="">Giỏ hàng</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>LIÊN HỆ</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-phone"></i> 0123456789
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i> bookory@gmail.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i> P. Ninh Kiều - Tp. Cần Thơ
+                    </li>
+                </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+                <p>&copy; 2026 BOOKORY. All rights reserved.</p>
+        </div>
     </footer>
+    <script src="../trangchu/xuliheader.js"></script>
+    <script src="../timkiem/xulitimkiem.js"></script>
 </body>
 
 </html>

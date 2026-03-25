@@ -34,6 +34,12 @@
                             <p>Trang chủ</p>
                         </a>
                     </li>
+                    <li class="header__sanpham">
+                        <a href="../sanpham/sanpham.html">
+                            <i class="fa-solid fa-book"></i>
+                            <p>Sản phẩm</p>
+                        </a>
+                    </li>
                     <li class="header__shopping-bag">
                         <a href="../giohang/giohang.html">
                             <i class="fa-solid fa-shopping-cart"></i>
@@ -45,19 +51,29 @@
                         <p>Tài khoản</p>
                         <div class="header__login">
                             <ul>
-                                <li>
-                                    <a href="../dangky/dangky.html" class="header__button header__button-dangky">Đăng
-                                        ký</a>
+                                <li class="header__dangky">
+                                    <a href="../dangky/dangky.html" 
+                                    class="header__button header__button-dangky">Đăng ký</a>
                                 </li>
-                                <li>
+                                <li class="header__dangnhap">
                                     <a href="../dangnhap/dangnhap.html"
                                         class="header__button header__button-dangnhap">Đăng nhập</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
+                    <li class="hamburger__dangky">
+                        <a href="../dangky/dangky.html">Đăng ký</a>
+                    </li>
+                    <li class="hamburger__dangnhap">
+                        <a href="../dangnhap/dangnhap.html">Đăng nhập</a>
+                    </li>
                 </ul>
             </nav>
+            <div class="header__hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-x"></i>
+            </div>
         </div>
     </header>
     <main class="sanpham-page">
@@ -495,10 +511,14 @@
                 </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+                <p>&copy; 2026 BOOKORY. All rights reserved.</p>
+        </div>
     </footer>
     <script src="xulisanpham.js"></script>
     <script src="../giohang/xuligiohang.js"></script>
     <script src="timkiem.js"></script>
+    <script src="../trangchu/xuliheader.js"></script>
 </body>
 
 </html>

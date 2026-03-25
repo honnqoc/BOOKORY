@@ -12,28 +12,74 @@
 </head>
 
 <body>
-    <header class="header-container">
-        <img class="logo" src="../hinhanh/logo.png">
-        <nav>
-            <ul>
-                <li>
-                    <a href="../trangchu/trangchu.html">
-                        <i class="fa-solid fa-home"></i>
-                        <p>Trang chủ</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="../sanpham/sanpham.html">
-                        <i class="fa-solid fa-book"></i>
-                        <p>Sản phẩm</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <header>
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="../trangchu/trangchu.html"><img src="../hinhanh/logo.png" alt="BOOKORY"></a>
+            </div>
+            <div class="header__search">
+                <form action="../timkiem/timkiem.html" method="get" class="header__search-bar">
+                    <input class="header__search-input" type="search" name="search"
+                        placeholder="Nhập vào tên một sản phẩm..." maxlength="200" required>
+                    <button class="header__search-button" type="submit">
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <nav class="header__menu">
+                <ul class="header__menu-items">
+                    <li class="header__back-to-home">
+                        <a href="../trangchu/trangchu.html">
+                            <i class="fa-solid fa-home"></i>
+                            <p>Trang chủ</p>
+                        </a>
+                    </li>
+                    <li class="header__sanpham">
+                        <a href="../sanpham/sanpham.html">
+                            <i class="fa-solid fa-book"></i>
+                            <p>Sản phẩm</p>
+                        </a>
+                    </li>
+                    <li class="header__shopping-bag">
+                        <a href="../giohang/giohang.html">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                            <p>Giỏ hàng</p>
+                        </a>
+                    </li>
+                    <li class="header__user">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Tài khoản</p>
+                        <div class="header__login">
+                            <ul>
+                                <li class="header__dangky">
+                                    <a href="../dangky/dangky.html" 
+                                    class="header__button header__button-dangky">Đăng ký</a>
+                                </li>
+                                <li class="header__dangnhap">
+                                    <a href="../dangnhap/dangnhap.html"
+                                        class="header__button header__button-dangnhap">Đăng nhập</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="hamburger__dangky">
+                        <a href="../dangky/dangky.html">Đăng ký</a>
+                    </li>
+                    <li class="hamburger__dangnhap">
+                        <a href="../dangnhap/dangnhap.html">Đăng nhập</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-x"></i>
+            </div>
+        </div>
     </header>
     <main class="form-box">
         <h2>ĐĂNG KÝ</h2>
-        <form>
+        <form class="form-dangky">
             <div class="input-group">
                 <label>Họ và tên:</label>
                 <input name="name" type="text" placeholder="Nhập họ và tên" required>
@@ -65,6 +111,8 @@
         <p>&copy; 2026 BOOKORY. All rights reserved.</p>   
     </footer>
     <script src="xulidangky.js"></script>
+    <script src="../trangchu/xuliheader.js"></script>
+    <script src="../timkiem/xulitimkiem.js"></script>
 </body>
 
 </html>
