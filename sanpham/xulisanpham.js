@@ -166,15 +166,21 @@ backToTop.addEventListener("click", function () {
     });
 })
 
-// Xử lí form điền email để nhận tin
-const registerBtn = document.querySelector('button[name="register-btn"]');
-const emailInput = document.querySelector('input[name="email-register"]');
-
-registerBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (emailInput.value === '') {
-        alert('Vui lòng nhập địa chỉ email của bạn trước!');
-    } else {
-        alert("Chúng tôi đã nhận được thông tin của bạn. Các chương trình khuyến mãi sẽ được gửi tới bạn ngay khi có!");
+// Xử lí input số lượng
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('qty-btn') && event.target.classList.contains('minus')) {
+        const input = event.target.parentElement.querySelector('.qty-input');
+        let value = parseInt(input.value);
+        if (value > 1) {
+            input.value = value - 1;
+        }
     }
-})
+    if (event.target.classList.contains('qty-btn') && event.target.classList.contains('plus')) {
+        const input = event.target.parentElement.querySelector('.qty-input');
+        let value = parseInt(input.value);
+        if (value < 100) {
+            input.value = value + 1;
+        }
+    }
+});
+

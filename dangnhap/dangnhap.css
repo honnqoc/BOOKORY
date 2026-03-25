@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* =============================== RESET CSS ==================================== */
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +13,8 @@ a {
 li {
     list-style: none;
 }
-/* Header */
+
+/* =============================== HEADER ==================================== */
 header {
     position: sticky;
     top: 0;
@@ -21,6 +22,8 @@ header {
     background: linear-gradient(135deg, #0255a7, #0e62f4);
     padding: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__container {
@@ -68,7 +71,6 @@ header {
 /* =============================== LOGO ==================================== */
 
 .header__logo {
-    flex: 1;
     transition: all 0.3s ease;
 }
 
@@ -271,6 +273,8 @@ form button {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 70%;
+    margin: auto;
 }
 
 form button:hover {
@@ -293,7 +297,7 @@ form button:hover {
     text-decoration: none;
 }
 
-/* Footer */
+/* =============================== FOOTER ==================================== */
 footer {
     background: linear-gradient(135deg, #0255a7, #0e62f4);
     color: white;
@@ -303,6 +307,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* =============================== RESPONSIVE ==================================== */
+
 @media screen and (max-width: 768px) {
     body {
         font-size: 15px;

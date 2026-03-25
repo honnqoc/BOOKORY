@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* =============================== RESET CSS ==================================== */
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +13,8 @@ a {
 li {
     list-style: none;
 }
-/* Header */
+
+/* =============================== HEADER ==================================== */
 header {
     position: sticky;
     top: 0;
@@ -21,6 +22,8 @@ header {
     background: linear-gradient(135deg, #0255a7, #0e62f4);
     padding: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__container {
@@ -68,8 +71,8 @@ header {
 /* =============================== LOGO ==================================== */
 
 .header__logo {
-    flex: 1;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .header__logo:hover {
@@ -78,6 +81,7 @@ header {
 
 .header__logo img {
     height: 30px;
+    display: block;
 }
 /* =============================== SEARCH BAR ==================================== */
 
@@ -326,6 +330,8 @@ form button {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 70%;
+    margin: auto;
 }
 
 form button:hover {
@@ -336,20 +342,48 @@ form button:hover {
 
 /* Nút xóa sản phẩm */
 .delete-btn {
-    background-color: #1342ffba;
+    background-color: #ff0000;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 2px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.delete-btn .fa-solid {
+    color: rgb(14, 4, 4);
 }
 
 .delete-btn:hover {
-    background-color: #ff0000;
+    transform: scale(1.2);
 }
 
-/* Footer */
+/* Nút tăng giảm số lượng */
+.qty-btn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #01923d;
+    color: white;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    font-weight: bolder;
+    border: 1px solid rgb(1, 86, 37);
+    padding-bottom: 1rem;
+    margin: 1rem;
+}
+
+.qty-btn:hover {
+    background: #0847b8;
+}
+
+/* =============================== FOOTER ==================================== */
 footer {
     background: linear-gradient(135deg, #0255a7, #0e62f4);
     color: white;
@@ -359,6 +393,16 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* =============================== RESPONSIVE ==================================== */
+
+@media screen and (max-width: 1240px) {
+    .quantity-in-cart {
+        display: none;
+    }
+}
+
+/* Tablet */
 @media screen and (max-width: 768px) {
     body {
         font-size: 15px;
@@ -462,4 +506,85 @@ footer {
         background: #ffd64f54;
         transition: 0.3s;
     }
+
+    .quantity-in-cart {
+        display: none;
+    }
 }
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+
+    .cart-table tr {
+        background: #f9fbff;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .cart-table td {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .cart-table td::before {
+        font-size: 13px;
+        color: #555;
+    }
+
+    /* Ảnh + tên nằm chung */
+    .cart-table td:nth-child(1),
+    .cart-table td:nth-child(2) {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .product-image {
+        width: 60px;
+        border-radius: 6px;
+    }
+
+    /* Nút số lượng */
+    .qty-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        margin: 0 5px;
+        padding: 0;
+    }
+
+    /* Nút xóa */
+    .delete-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+
+    .delete-btn i {
+        margin-left: 5px;
+    }
+
+    /* Tổng tiền */
+    .cart-table tfoot td {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    /* Form */
+    .user-address-info {
+        gap: 8px;
+    }
+
+    form input {
+        font-size: 14px;
+    }
+
+    form button {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+

@@ -196,7 +196,7 @@ if (results.length === 0) {
         const productCard = document.createElement("div");
         // Thêm lớp CSS cho thẻ sản phẩm
         productCard.classList.add("product-card");
-        productCard.classList.add("khampha_product-card");
+        productCard.classList.add("khampha__product-card");
         // Điền thông tin sản phẩm vào thẻ
         productCard.innerHTML = `
             <a href="../chitietsanpham/chitietsanpham.html?id=${product.id}">
@@ -207,6 +207,12 @@ if (results.length === 0) {
                 <p class="product-card__old">${product.oldPrice.toLocaleString()}đ</p>
                 <div class="product-card__tag">${product.discount}%</div>
             </a>
+            <div class="product-card_quantity">
+                <label>Số lượng:</label>
+                <button class="qty-btn minus">-</button>
+                <input type="number" value="1" min="1" class="qty-input">
+                <button class="qty-btn plus">+</button>
+            </div>
             <button class="add-to-cart">Thêm vào giỏ</button>
         `;
         // Thêm thẻ sản phẩm vào container
@@ -214,15 +220,24 @@ if (results.length === 0) {
     });
 }
 
-// Xử lí form điền email để nhận tin
-const registerBtn = document.querySelector('button[name="register-btn"]');
-const emailInput = document.querySelector('input[name="email-register"]');
-
-registerBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (emailInput.value === '') {
-        alert('Vui lòng nhập địa chỉ email của bạn trước!');
-    } else {
-        alert("Chúng tôi đã nhận được thông tin của bạn. Các chương trình khuyến mãi sẽ được gửi tới bạn ngay khi có!");
+// Xử lí input số lượng sản phẩm
+document.addEventListener('click', (event) => {
+    // Nếu click vào button giảm
+    if (event.target.classList.contains('qty-btn') && event.target.classList.contains('minus')) {
+        const input = event.target.parentElement.querySelector('.qty-input');
+        let value = parseInt(input.value);
+        if (value > 1) {
+            input.value = value - 1;
+        }
     }
-})
+    // Nếu click vào button tăng
+    if (event.target.classList.contains('qty-btn') && event.target.classList.contains('plus')) {
+        const input = event.target.parentElement.querySelector('.qty-input');
+        let value = parseInt(input.value);
+        if (value < 100) {
+            input.value = value + 1;
+        }
+    }
+});
+
+

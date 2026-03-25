@@ -219,3 +219,22 @@ registerBtn.addEventListener('click', (event) => {
         alert("Chúng tôi đã nhận được thông tin của bạn. Các chương trình khuyến mãi sẽ được gửi tới bạn ngay khi có!");
     }
 })
+
+// Xử lí input số lượng sản phẩm
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('qty-btn') && event.target.classList.contains('minus')) {
+        const input = event.target.parentElement.querySelector('.qty-input');
+        let value = parseInt(input.value);
+        if (value > 1) {
+            input.value = value - 1;
+        }
+    }
+    if (event.target.classList.contains('qty-btn') && event.target.classList.contains('plus')) {
+        const input = event.target.parentElement.querySelector('.qty-input');
+        let value = parseInt(input.value);
+        if (value < 100) {
+            input.value = value + 1;
+        }
+    }
+});
+

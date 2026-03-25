@@ -11,14 +11,16 @@ const addToCart = (event) => {
     if (typeof Storage != "undefined") {
         // Lấy thông tin sản phẩm từ DOM
         const button = event.target;
-        const product = button.previousElementSibling;
+        const quantity = button.previousElementSibling
+        const product = quantity.previousElementSibling;
+        
         // Tạo một đối tượng sản phẩm mới với thông tin lấy được
         let newProduct = {
             image: product.children[0].src,
             id: product.children[1].innerText,
             name: product.children[2].innerText,
             price: product.children[3].innerText.replace(/[^\d]/g, ''),
-            quantity: 1
+            quantity: Number(quantity.children[2].value)
         };
 
         // Lấy dữ liệu giỏ hàng từ localStorage, nếu chưa có thì tạo mới một mảng rỗng
@@ -27,7 +29,7 @@ const addToCart = (event) => {
             // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng lên 1
             products.forEach(item => {
                 if (item.id === newProduct.id) {
-                    item.quantity++;
+                    item.quantity += newProduct.quantity;
                 }
             })
         } else {
@@ -101,9 +103,9 @@ const renderCart = () => {
                 <td>${item.name}</td>
                 <td><img class="product-image" src="${item.image}" alt="${item.name}"></td>
                 <td>${Number(item.price.replace(/[^\d]/g, '')).toLocaleString()}đ</td>
-                <td>${item.quantity}</td>
+                <td><button class="qty-btn btn-minus" data-index="${index}">-</button>${item.quantity}<button class="qty-btn btn-plus" data-index="${index}">+</button></td>
                 <!-- Dùng data-index để lưu vị trí index của sản phẩm trong mảng products -->
-                <td><button class="delete-btn" type="button" data-index="${index}">Xóa</button></td>
+                <td><button class="delete-btn" type="button" data-index="${index}">Xóa <i class="fa-solid fa-trash"></i></i></button></td>
             </tr>`;
             html += newRow;
         })
@@ -145,7 +147,8 @@ renderCart();
 
 // Lắng nghe sự kiện click cho button xóa sản phẩm
 document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('delete-btn')) {
+    // Lấy phần tử button xóa
+    if (event.target.classList.contains('delete-btn') || event.target.classList.contains('fa-trash')) {
         // Hiển thị hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng
         let accept = confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');
         // Nếu người dùng xác nhận xóa sản phẩm thì gọi hàm xóa sản phẩm khỏi giỏ hàng
@@ -191,5 +194,39 @@ orderBtn.addEventListener('click', (event) => {
     window.location.href = '../trangchu/trangchu.html';
 });
 
+// Xử lí tăng giảm số lượng
+document.addEventListener('click', (event) => {
+    // Lấy dữ liệu sản phẩm
+    let products = JSON.parse(localStorage.getItem('productCart'));
+    // Thêm sự kiện click cho nút giảm
+    if (event.target.classList.contains('btn-minus')) {
+        // Lấy chỉ số của sản phẩm trong mảng
+        let index = event.target.getAttribute('data-index');
+        // Xử lí số lượng
+        if (products[index].quantity > 1) {
+            products[index].quantity--;
+        } else {
+            // Nếu số lượng là 1 mà bấm - thì hiển thị thông báo xóa khỏi giỏ hàng
+            let op = confirm('Xóa sản phẩm này khỏi giỏ hàng?');
+            if (op) {
+                products.splice(index, 1);
+            } else {
+                event.preventDefault();
+            }
+        }
+    }
+    // Thêm sự kiện click cho nút tăng
+    if (event.target.classList.contains('btn-plus')) {
+        // Lấy chỉ số của sản phẩm trong mảng
+        let index = event.target.getAttribute('data-index');
+        // Xử lí số lượng
+        if (products[index].quantity < 100) {
+            products[index].quantity++;
+        }
+    }
+    // Lưu dữ liệu lại
+    localStorage.setItem('productCart', JSON.stringify(products));
+    renderCart();
+}) 
 
 

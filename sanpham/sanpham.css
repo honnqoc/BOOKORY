@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* =============================== RESET CSS ==================================== */
 * {
     margin: 0;
     padding: 0;
@@ -43,9 +43,9 @@ button {
 }
 
 /* =============================== HEADER ==================================== */
-
 header {
-    position: sticky;
+    width: 100%;
+    position: fixed;
     top: 0;
     z-index: 1000;
     background: linear-gradient(135deg, #0255a7, #0e62f4);
@@ -59,25 +59,8 @@ header {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    justify-content: space-between;
 }
 
-.header__search {
-    padding: 0;
-}
-
-.header__search-input {
-    padding: 4px 6px;
-}
-
-.header__menu-items li i {
-    display: block;
-}
-
-.header__login {
-    left: 25%;
-    transform: translateX(-50%);
-}
 .header__hamburger {
     display: none;
     font-size: 22px;
@@ -113,20 +96,20 @@ header {
 /* =============================== SEARCH BAR ==================================== */
 
 .header__search {
+    flex: 2;
     display: flex;
     justify-content: center;
     padding: 0px 10px;
-    flex: 1;
     margin: 0 auto;
 }
 
 .header__search-bar {
-    flex: 2;
     display: flex;
     border-radius: 40px;
     background-color: white;
     overflow: hidden;
     border: 1px solid #ddd;
+    width: 70%;
 }
 
 .header__search-input {
@@ -353,7 +336,7 @@ header {
 
 .product {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -496,6 +479,43 @@ header {
     border-radius: 0 0 0 20px;
     color: white;
     font-size: 12px;
+}
+
+/* Input số lượng */
+.product-card_quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 3%;
+}
+
+.qty-btn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #01923d;
+    color: white;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    font-weight: bolder;
+    border: 1px solid rgb(1, 86, 37);
+    padding-bottom: 1rem;
+}
+
+.qty-btn:hover {
+    background: #0847b8;
+}
+
+.qty-input {
+    width: 35px;
+    height: 25px;
+    text-align: right;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border: none;
 }
 
 
@@ -670,7 +690,9 @@ header {
     padding: 4px;
 }
 
-/* Responsive */
+/* =============================== RESPONSIVE ==================================== */
+
+/* Tablet */
 @media screen and (max-width: 768px) {
     body {
         font-size: 15px;
@@ -835,7 +857,7 @@ header {
         font-size: 15px;
     }
 
-    /* ================================FOOTER================================== */
+    /* ================================ FOOTER ================================== */
     .footer__container {
         padding: 12px 4%;
     }
@@ -843,8 +865,13 @@ header {
     .footer__col1 img {
         height: 25px;
     }
+
+    .product-card_quantity label {
+        display: block;
+    }
 }  
 
+/* Mobile */
 @media screen and (max-width: 480px) {
     body {
         font-size: 13px;
@@ -870,5 +897,9 @@ header {
     .hot__product-card {
         min-width: 130px;
         padding: 10px;
+    }
+
+    .product-card_quantity label {
+        display: block;
     }
 }

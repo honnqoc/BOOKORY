@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* =============================== RESET CSS ==================================== */
 * {
     padding: 0;
     margin: 0;
@@ -19,7 +19,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-/* Header */
+
+/* =============================== HEADER ==================================== */
 header {
     position: sticky;
     top: 0;
@@ -27,6 +28,8 @@ header {
     background: linear-gradient(135deg, #0255a7, #0e62f4);
     padding: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__container {
@@ -74,7 +77,6 @@ header {
 /* =============================== LOGO ==================================== */
 
 .header__logo {
-    flex: 1;
     transition: all 0.3s ease;
 }
 
@@ -272,6 +274,8 @@ form button {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 70%;
+    margin: auto;
 }
 
 form button:hover {
@@ -281,7 +285,11 @@ form button:hover {
 }
 
 .input-group {
-    width: 100%
+    width: 100%;
+}
+
+.input-group input {
+    margin-bottom: 1rem;
 }
 
 .text {
@@ -300,7 +308,7 @@ form button:hover {
 
 .checkbox-group input[type="checkbox"] {
     position: absolute;
-    left: 95%;
+    left: 65%;
     top: 0;
     width: 20px;
     height: 20px;
@@ -311,7 +319,20 @@ form button:hover {
     text-decoration: none;
 }
 
-/* Footer */
+/* Hợp lệ */
+input.valid {
+    border: 2px solid rgb(0, 188, 0);
+    box-shadow: 0 0 8px rgb(25, 255, 67);
+}
+
+/* Không hợp lệ */
+input.invalid {
+    border: 2px solid red;
+    box-shadow: 0 0 8px rgba(255, 24, 24, 0.6);
+}
+
+/* =============================== FOOTER ==================================== */
+
 footer {
     background: linear-gradient(135deg, #0255a7, #0e62f4);
     color: white;
@@ -321,6 +342,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* =============================== RESPONSIVE ==================================== */
+
 @media screen and (max-width: 768px) {
     body {
         font-size: 15px;
