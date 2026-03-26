@@ -183,7 +183,7 @@ orderBtn.addEventListener('click', (event) => {
         return;
     }
     // Kiểm tra nếu giỏ hàng trống thì không thực hiện đặt hàng
-    let products = JSON.parse(localStorage.getItem('productCart'));
+    let products = JSON.parse(localStorage.getItem('productCart')) || [];
     if (localStorage.getItem('productCart') === null || products.length == 0) {
         alert('Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm vào giỏ hàng trước khi đặt hàng!');
         return;

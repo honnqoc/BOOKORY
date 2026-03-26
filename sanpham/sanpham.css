@@ -45,7 +45,7 @@ button {
 /* =============================== HEADER ==================================== */
 header {
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1000;
     background: linear-gradient(135deg, #0255a7, #0e62f4);

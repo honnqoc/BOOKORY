@@ -83,45 +83,7 @@ header {
     height: 30px;
     display: block;
 }
-/* =============================== SEARCH BAR ==================================== */
 
-.header__search {
-    display: flex;
-    justify-content: center;
-    padding: 0px 10px;
-    flex: 1;
-    margin: 0 auto;
-}
-
-.header__search-bar {
-    flex: 2;
-    display: flex;
-    border-radius: 40px;
-    background-color: white;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    flex-direction: row;
-}
-
-.header__search-input {
-    border: none;
-    padding: 7px 10px;
-    outline: none;
-    width: 100%;
-}
-
-.header__search-button {
-    background-color: #ff9800;
-    border: none;
-    color: white;
-    padding: 0 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.header__search-button:hover {
-    background: #e68900;
-}
 /* =============================== NAV ==================================== */
 
 .header__menu {
@@ -278,10 +240,9 @@ td {
 
 .cart-main-container {
     width: 95%;
-    margin: 5% auto;
+    margin: 3% auto;
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
