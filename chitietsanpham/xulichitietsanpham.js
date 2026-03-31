@@ -206,20 +206,6 @@ if (product) {
     document.getElementById('product-desc2').textContent = product.description2;
 }
 
-// Xử lí form điền email để nhận tin
-const registerBtn = document.querySelector('button[name="register-btn"]');
-const emailInput = document.querySelector('input[name="email-register"]');
-
-// Kiểm tra nếu email trống thì yêu cầu nhập, nếu có thì thông báo đã nhận được thông tin
-registerBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (emailInput.value === '') {
-        alert('Vui lòng nhập địa chỉ email của bạn trước!');
-    } else {
-        alert("Chúng tôi đã nhận được thông tin của bạn. Các chương trình khuyến mãi sẽ được gửi tới bạn ngay khi có!");
-    }
-})
-
 // Xử lí input số lượng sản phẩm
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('qty-btn') && event.target.classList.contains('minus')) {
